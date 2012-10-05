@@ -14,7 +14,7 @@ delegates to built-in functions, if present, so modern browsers will use the
 native implementations of **forEach**, **map**, **reduce**, **filter**,
 **every**, **some** and **indexOf**.
 
-Theses ambient declaration source files add statically type information for use
+These ambient declaration source files add statically type information for use
 [underscore.js](http://underscorejs.org/) in
 [TypeScript](http://www.typescriptlang.org/).
 
@@ -37,7 +37,7 @@ you need it.
 ```
 /// <reference path="underscore.d.ts" />
 
-import  _ = module("underscore");
+import _ = module("underscore");
 console.log(_.range(10));
 ```
 
