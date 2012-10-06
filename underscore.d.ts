@@ -210,6 +210,6 @@ declare module "underscore" {
         value () : any;
     }
 
-    export function chain (object : any) : underscoreWrappedObject;
+    export function chain (object : any) : UnderscoreWrappedObject;
 
 }
