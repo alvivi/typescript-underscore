@@ -5,7 +5,214 @@
  */
 
 interface UnderscoreWrappedObject {
-        value () : any;
+    each (iterator : (elementOrValue : any, indexOrKey : any, list? : any) => void, context? : any) : UnderscoreWrappedObject;
+    forEach (iterator : (elementOrValue : any, indexOrKey : any, list? : any) => void, context? : any) : UnderscoreWrappedObject;
+
+    map (iterator : (value : any, key? : any, list? : any) => any, context? : any) : UnderscoreWrappedObject;
+    collect (iterator : (value : any, key? : any, list? : any) => any, context? : any) : UnderscoreWrappedObject;
+
+    reduce (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : UnderscoreWrappedObject;
+    inject (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : UnderscoreWrappedObject;
+    foldl (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : UnderscoreWrappedObject;
+
+    reduceRight (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : UnderscoreWrappedObject;
+    foldr (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : UnderscoreWrappedObject;
+
+    find (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+    detect (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+
+    filter (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+    select (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+
+    where (properties : any) : UnderscoreWrappedObject;
+
+    reject (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+
+    all (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+    every (iterator : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+
+    any (iterator? : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+    some (iterator? : (value : any) => bool, context? : any) : UnderscoreWrappedObject;
+
+    contains (value : any) : UnderscoreWrappedObject;
+    include (value : any) : UnderscoreWrappedObject;
+
+    invoke (methodName : string, ...arguments: any[]) : UnderscoreWrappedObject;
+
+    pluck (propertyName : string) : UnderscoreWrappedObject;
+
+    max (iterator? : (value : any) => any, context? : any) : UnderscoreWrappedObject;
+
+    min (iterator? : (value : any) => any, context? : any) : UnderscoreWrappedObject;
+
+    sortBy (iterator? : any, context? : any) : UnderscoreWrappedObject;
+
+    groupBy (iterator : (value : any) => any) : UnderscoreWrappedObject;
+
+    countBy (iterator : (value : any) => any) : UnderscoreWrappedObject;
+
+    shuffle () : UnderscoreWrappedObject;
+
+    toArray () : UnderscoreWrappedObject;
+
+    size () : UnderscoreWrappedObject;
+
+    // Array functions
+
+    first (n? : number) : UnderscoreWrappedObject;
+    head (n? : number) : UnderscoreWrappedObject;
+    take (n? : number) : UnderscoreWrappedObject;
+
+    initial (n? : number) : UnderscoreWrappedObject;
+
+    last (n? : number) : UnderscoreWrappedObject;
+
+    rest (index? : number) : UnderscoreWrappedObject;
+    tail (index? : number) : UnderscoreWrappedObject;
+    drop (index? : number) : UnderscoreWrappedObject;
+
+    compact () : UnderscoreWrappedObject;
+
+    flatten (shallow? : bool) : UnderscoreWrappedObject;
+
+    without (...values : any[]) : UnderscoreWrappedObject;
+
+    union (...arrays : any[][]) : UnderscoreWrappedObject;
+
+    intersection (...arrays : any[][]) : UnderscoreWrappedObject;
+
+    difference (...arrays : any[][]) : UnderscoreWrappedObject;
+
+    uniq (isSorted? : bool, iterator? : (any) => any) : UnderscoreWrappedObject;
+    unique (isSorted? : bool, iterator? : (any) => any) : UnderscoreWrappedObject;
+
+    zip (...arrays : any[][]) : UnderscoreWrappedObject;
+
+    object (value? : any) : UnderscoreWrappedObject;
+
+    indexOf (value : any, isSorted? : bool) : UnderscoreWrappedObject;
+
+    lastIndexOf (value : any, fromIndex? : number) : UnderscoreWrappedObject;
+
+    sortedIndex (value : any, iterator? : (value : any) => any) : UnderscoreWrappedObject;
+
+    // Not useful in a wrappedObject
+    // range (startOrStop : number, stop? : number, step? : number) : number[];
+
+
+    // Functions (uh, ahem) functions
+
+    bind (object : any, ...arguments : any[]) : UnderscoreWrappedObject;
+
+    // Not useful in a wrappedObject
+    // bindAll (object : any, ...methodNames : string[]) : void;
+
+    memoize (hash? : (value : any) => any) : UnderscoreWrappedObject;
+
+    // delay (wait : number, ...arguments : any[]) : void;
+
+    // Not useful in a wrappedObject
+    // defer (...arguments : any[]) : void;
+
+    throttle (wait : number) : UnderscoreWrappedObject;
+
+    debounce (wait : number, immediate? : bool) : UnderscoreWrappedObject;
+
+    once () : UnderscoreWrappedObject;
+
+    // Not useful in a wrappedObject
+    // after (count : number, fn : (...as : any[]) => any) : (...as : any[]) => any;
+
+    wrap (wrapper : (...as : any[]) => any) : UnderscoreWrappedObject;
+
+    compose (...fns : any[]) : UnderscoreWrappedObject;
+
+
+    // Object functions
+
+    keys () : UnderscoreWrappedObject;
+
+    values () : UnderscoreWrappedObject;
+
+    pairs () : UnderscoreWrappedObject;
+
+    invert () : UnderscoreWrappedObject;
+
+    functions () : UnderscoreWrappedObject;
+    methods () : UnderscoreWrappedObject;
+
+    extend (...sources : any[]) : UnderscoreWrappedObject;
+
+    pick (...keys : string[]) : UnderscoreWrappedObject;
+
+    omit (...keys : string[]) : UnderscoreWrappedObject;
+
+    defaults (...defaults : any[]) : UnderscoreWrappedObject;
+
+    clone () : UnderscoreWrappedObject;
+
+    tap (interceptor : (...as : any[]) => any) : UnderscoreWrappedObject;
+
+    has (key : any) : UnderscoreWrappedObject;
+
+    isEmpty () : UnderscoreWrappedObject;
+
+    isElement () : UnderscoreWrappedObject;
+
+    isArray () : UnderscoreWrappedObject;
+
+    isObject () : UnderscoreWrappedObject;
+
+    isArguments () : UnderscoreWrappedObject;
+
+    isFunction () : UnderscoreWrappedObject;
+
+    isString () : UnderscoreWrappedObject;
+
+    isNumber () : UnderscoreWrappedObject;
+
+    isFinite () : UnderscoreWrappedObject;
+
+    isBoolean () : UnderscoreWrappedObject;
+
+    isDate () : UnderscoreWrappedObject;
+
+    isRegExp () : UnderscoreWrappedObject;
+
+    isNaN () : UnderscoreWrappedObject;
+
+    isNull () : UnderscoreWrappedObject;
+
+    isUndefined () : UnderscoreWrappedObject;
+
+
+    // Utility functions
+
+    // Not useful in a wrappedObject
+    // noConflict () : any;
+
+    identity () : UnderscoreWrappedObject;
+
+    // Not useful in a wrappedObject
+    // times (n : number, iterator : (index : number) => void, context? : any) : void;
+
+    // random (min : number, max : number) : number;
+
+    // mixin (object : any) : void;
+
+    // uniqueId (prefix? : string) : any;
+
+    escape () : UnderscoreWrappedObject;
+
+    result (property : string) : UnderscoreWrappedObject;
+
+    // Not useful in a wrappedObject
+    // template (data? : any, settings? : any) : (...as : any[]) => string;
+
+    // Not useful in a wrappedObject
+    // chain () : UnderscoreWrappedObject;
+
+    value () : any;
 }
 
 interface UnderscoreOOStatic extends Function {
@@ -18,9 +225,9 @@ interface UnderscoreOOStatic extends Function {
     map (iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
     collect (iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
 
-    reduce (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
-    inject (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
-    foldl (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
+    reduce (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+    inject (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+    foldl (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
 
     reduceRight (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
     foldr (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
@@ -103,7 +310,7 @@ interface UnderscoreOOStatic extends Function {
 
     sortedIndex (value : any, iterator? : (value : any) => any) : any;
 
-    // Not valid on OO-Style
+    // Not valid in OO-Style
     // range (startOrStop : number, stop? : number, step? : number) : number[];
 
 
@@ -111,7 +318,7 @@ interface UnderscoreOOStatic extends Function {
 
     bind (object : any, ...arguments : any[]) : (...as : any[]) => any;
 
-    // Not valid on OO-Style
+    // Not valid in OO-Style
     // bindAll (object : any, ...methodNames : string[]) : void;
 
     memoize (hash? : (value : any) => any) : (...as : any[]) => any;
@@ -126,7 +333,7 @@ interface UnderscoreOOStatic extends Function {
 
     once () : (...as : any[]) => any;
 
-    // Not valid on OO-Style
+    // Not valid in OO-Style
     // after (count : number, fn : (...as : any[]) => any) : (...as : any[]) => any;
 
     wrap (wrapper : (...as : any[]) => any) : (...as : any[]) => any;
@@ -194,12 +401,12 @@ interface UnderscoreOOStatic extends Function {
 
     // Utility functions
 
-    // Not valid on OO-Style
+    // Not valid in OO-Style
     // noConflict () : any;
 
     identity () : any;
 
-    // Not valid on OO-Style
+    // Not valid in OO-Style
     // times (n : number, iterator : (index : number) => void, context? : any) : void;
 
     // random (min : number, max : number) : number;
@@ -228,9 +435,9 @@ declare module "underscore" {
     export function map (list : any, iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
     export function collect (list : any, iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
 
-    export function reduce (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
-    export function inject (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
-    export function foldl (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
+    export function reduce (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+    export function inject (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+    export function foldl (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
 
     export function reduceRight (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
     export function foldr (list : any, iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
