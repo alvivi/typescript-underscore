@@ -8,7 +8,218 @@ interface UnderscoreWrappedObject {
     value () : any;
 }
 
+interface UnderscoreOOStatic extends Function {
+    // OO-style
+    (arg : any) : UnderscoreOOStatic;
+
+    each (iterator : (elementOrValue : any, indexOrKey : any, list? : any) => void, context? : any) : void;
+    forEach (iterator : (elementOrValue : any, indexOrKey : any, list? : any) => void, context? : any) : void;
+
+    map (iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
+    collect (iterator : (value : any, key? : any, list? : any) => any, context? : any) : any[];
+
+    reduce (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
+    inject (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
+    foldl (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any);
+
+    reduceRight (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+    foldr (iterator : (memo : any, value : any, indexOrKey? : any, context? : any) => any, memo : any, context? : any) : any;
+
+    find (iterator : (value : any) => bool, context? : any) : any;
+    detect (iterator : (value : any) => bool, context? : any) : any;
+
+    filter (iterator : (value : any) => bool, context? : any) : any;
+    select (iterator : (value : any) => bool, context? : any) : any;
+
+    where (properties : any) : any;
+
+    reject (iterator : (value : any) => bool, context? : any) : any;
+
+    all (iterator : (value : any) => bool, context? : any) : any;
+    every (iterator : (value : any) => bool, context? : any) : any;
+
+    any (iterator? : (value : any) => bool, context? : any) : any;
+    some (iterator? : (value : any) => bool, context? : any) : any;
+
+    contains (value : any) : bool;
+    include (value : any) : bool;
+
+    invoke (methodName : string, ...arguments: any[]) : any;
+
+    pluck (propertyName : string) : any;
+
+    max (iterator? : (value : any) => any, context? : any) : any;
+
+    min (iterator? : (value : any) => any, context? : any) : any;
+
+    sortBy (iterator? : any, context? : any) : any;
+
+    groupBy (iterator : (value : any) => any) : any;
+
+    countBy (iterator : (value : any) => any) : any;
+
+    shuffle () : any;
+
+    toArray () : any[];
+
+    size () : number;
+
+    // Array functions
+
+    first (n? : number) : any;
+    head (n? : number) : any;
+    take (n? : number) : any;
+
+    initial (n? : number) : any[];
+
+    last (n? : number) : any;
+
+    rest (index? : number) : any[];
+    tail (index? : number) : any[];
+    drop (index? : number) : any[];
+
+    compact () : any[];
+
+    flatten (shallow? : bool) : any[];
+
+    without (...values : any[]) : any[];
+
+    union (...arrays : any[][]) : any[];
+
+    intersection (...arrays : any[][]) : any[];
+
+    difference (...arrays : any[][]) : any[];
+
+    uniq (isSorted? : bool, iterator? : (any) => any) : any[];
+    unique (isSorted? : bool, iterator? : (any) => any) : any[];
+
+    zip (...arrays : any[][]) : any[];
+
+    object (value? : any) : any;
+
+    indexOf (value : any, isSorted? : bool) : number;
+
+    lastIndexOf (value : any, fromIndex? : number) : number;
+
+    sortedIndex (value : any, iterator? : (value : any) => any) : any;
+
+    // Not valid on OO-Style
+    // range (startOrStop : number, stop? : number, step? : number) : number[];
+
+
+    // Functions (uh, ahem) functions
+
+    bind (object : any, ...arguments : any[]) : (...as : any[]) => any;
+
+    // Not valid on OO-Style
+    // bindAll (object : any, ...methodNames : string[]) : void;
+
+    memoize (hash? : (value : any) => any) : (...as : any[]) => any;
+
+    delay (wait : number, ...arguments : any[]) : void;
+
+    defer (...arguments : any[]) : void;
+
+    throttle (wait : number) : (...as : any[]) => any;
+
+    debounce (wait : number, immediate? : bool) : (...as : any[]) => any;
+
+    once () : (...as : any[]) => any;
+
+    // Not valid on OO-Style
+    // after (count : number, fn : (...as : any[]) => any) : (...as : any[]) => any;
+
+    wrap (wrapper : (...as : any[]) => any) : (...as : any[]) => any;
+
+    compose (...fns : any[]) : (...as : any[]) => any;
+
+
+    // Object functions
+
+    keys () : string[];
+
+    values () : any[];
+
+    pairs () : any[];
+
+    invert () : any;
+
+    functions () : string[];
+    methods () : string[];
+
+    extend (...sources : any[]) : any;
+
+    pick (...keys : string[]) : any;
+
+    omit (...keys : string[]) : any;
+
+    defaults (...defaults : any[]) : any;
+
+    clone () : any;
+
+    tap (interceptor : (...as : any[]) => any) : any;
+
+    has (key : any) : bool;
+
+    isEmpty () : bool;
+
+    isElement () : bool;
+
+    isArray () : bool;
+
+    isObject () : bool;
+
+    isArguments () : bool;
+
+    isFunction () : bool;
+
+    isString () : bool;
+
+    isNumber () : bool;
+
+    isFinite () : bool;
+
+    isBoolean () : bool;
+
+    isDate () : bool;
+
+    isRegExp () : bool;
+
+    isNaN () : bool;
+
+    isNull () : bool;
+
+    isUndefined () : bool;
+
+
+    // Utility functions
+
+    // Not valid on OO-Style
+    // noConflict () : any;
+
+    identity () : any;
+
+    // Not valid on OO-Style
+    // times (n : number, iterator : (index : number) => void, context? : any) : void;
+
+    // random (min : number, max : number) : number;
+
+    // mixin (object : any) : void;
+
+    // uniqueId (prefix? : string) : any;
+
+    escape () : string;
+
+    result (property : string) : any;
+
+    template (data? : any, settings? : any) : (...as : any[]) => string;
+
+    chain () : UnderscoreWrappedObject;
+}
+
 interface UnderscoreStatic {
+    // OO-style
+    (arg : any) : UnderscoreOOStatic;
 
     // Collection functions (Arrays or Objects)
 
