@@ -449,7 +449,7 @@ declare interface UnderscoreOOStatic {
     chain () : UnderscoreWrappedObject;
 }
 
-declare interface UnderscoreStatic extends Function {
+declare interface UnderscoreStatic {
     // OO-style
     (arg : any) : UnderscoreOOStatic;
 
