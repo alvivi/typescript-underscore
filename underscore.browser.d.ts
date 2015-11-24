@@ -4,42 +4,42 @@
    Typescipt-Underscore may be freely distributed under the MIT license.
  */
 
-declare interface UnderscoreVoidListIterator {
-    (element : any, index : number, list : any[]) : void;
+interface UnderscoreVoidListIterator {
+    (element: any, index: number, list: any[]): void;
 }
 
-declare interface UnderscoreMemoListIterator {
-    (memo : any, element : any, index : number, list : any[]) : any;
+interface UnderscoreMemoListIterator {
+    (memo: any, element: any, index: number, list: any[]): any;
 }
 
-declare interface UnderscoreListIterator {
-    (element : any, index : number, list : any[]) : any;
+interface UnderscoreListIterator {
+    (element: any, index: number, list: any[]): any;
 }
 
-declare interface UnderscoreVoidObjectIterator {
-    (element : any, key : any, object : any) : void;
+interface UnderscoreVoidObjectIterator {
+    (element: any, key: any, object: any): void;
 }
 
-declare interface UnderscoreMemoObjectIterator {
-    (memo : any, element : any, key : any, object : any) : any;
+interface UnderscoreMemoObjectIterator {
+    (memo: any, element: any, key: any, object: any): any;
 }
 
-declare interface UnderscoreObjectIterator{
-    (element : any, key : any, object : any) : any;
+interface UnderscoreObjectIterator {
+    (element: any, key: any, object: any): any;
 }
 
-declare interface UnderscorePredicate {
-    (value : any) : bool;
+interface UnderscorePredicate {
+    (value: any): boolean;
 }
 
-declare interface UnderscoreIterator {
-    (value : any) : any;
+interface UnderscoreIterator {
+    (value: any): any;
 }
 
-declare interface UnderscoreTemplateSettings {
-    evaluate?    : RegExp;
-    interpolate? : RegExp;
-    escape?      : RegExp;
+interface UnderscoreTemplateSettings {
+    evaluate?: RegExp;
+    interpolate?: RegExp;
+    escape?: RegExp;
 }
 
 /* Interface for use underscore in functional (chain) style.
@@ -47,629 +47,629 @@ declare interface UnderscoreTemplateSettings {
    uniqueId, chain and template have been removed because they are not very
    useful here.
  */
-declare interface UnderscoreWrappedObject {
+interface UnderscoreWrappedObject {
     // Collection Functions (Arrays or Objects)
-    each (iterator : UnderscoreVoidListIterator, context? : any) : UnderscoreWrappedObject;
-    each (iterator : UnderscoreVoidObjectIterator, context? : any) : UnderscoreWrappedObject;
-    forEach (iterator : UnderscoreVoidListIterator, context? : any) : UnderscoreWrappedObject;
-    forEach (iterator : UnderscoreVoidObjectIterator, context? : any) : UnderscoreWrappedObject;
+    each(iterator: UnderscoreVoidListIterator, context?: any): UnderscoreWrappedObject;
+    each(iterator: UnderscoreVoidObjectIterator, context?: any): UnderscoreWrappedObject;
+    forEach(iterator: UnderscoreVoidListIterator, context?: any): UnderscoreWrappedObject;
+    forEach(iterator: UnderscoreVoidObjectIterator, context?: any): UnderscoreWrappedObject;
 
-    map (iterator : UnderscoreListIterator, context? : any) : UnderscoreWrappedObject;
-    map (iterator : UnderscoreObjectIterator, context? : any) : UnderscoreWrappedObject;
-    collect (iterator : UnderscoreListIterator, context? : any) : UnderscoreWrappedObject;
-    collect (iterator : UnderscoreObjectIterator, context? : any) : UnderscoreWrappedObject;
+    map(iterator: UnderscoreListIterator, context?: any): UnderscoreWrappedObject;
+    map(iterator: UnderscoreObjectIterator, context?: any): UnderscoreWrappedObject;
+    collect(iterator: UnderscoreListIterator, context?: any): UnderscoreWrappedObject;
+    collect(iterator: UnderscoreObjectIterator, context?: any): UnderscoreWrappedObject;
 
-    reduce (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    reduce (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    inject (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    inject (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    foldl (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    foldl (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : UnderscoreWrappedObject;
+    reduce(iterator: UnderscoreMemoListIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    reduce(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    inject(iterator: UnderscoreMemoListIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    inject(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    foldl(iterator: UnderscoreMemoListIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    foldl(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): UnderscoreWrappedObject;
 
-    reduceRight (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    reduceRight (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    foldr (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : UnderscoreWrappedObject;
-    foldr (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : UnderscoreWrappedObject;
+    reduceRight(iterator: UnderscoreMemoListIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    reduceRight(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    foldr(iterator: UnderscoreMemoListIterator, memo: any, context?: any): UnderscoreWrappedObject;
+    foldr(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): UnderscoreWrappedObject;
 
-    find (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
-    detect (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
+    find(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
+    detect(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
 
-    filter (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
-    select (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
+    filter(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
+    select(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
 
-    where (properties : any) : UnderscoreWrappedObject;
+    where(properties: any): UnderscoreWrappedObject;
 
-    reject (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
+    reject(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
 
-    all (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
-    every (predicate : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
+    all(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
+    every(predicate: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
 
-    any (predicate? : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
-    some (predicate? : UnderscorePredicate, context? : any) : UnderscoreWrappedObject;
+    any(predicate?: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
+    some(predicate?: UnderscorePredicate, context?: any): UnderscoreWrappedObject;
 
-    contains (value : any) : UnderscoreWrappedObject;
-    include (value : any) : UnderscoreWrappedObject;
+    contains(value: any): UnderscoreWrappedObject;
+    include(value: any): UnderscoreWrappedObject;
 
-    invoke (methodName : string, ...arguments: any[]) : UnderscoreWrappedObject;
+    invoke(methodName: string, ...arguments: any[]): UnderscoreWrappedObject;
 
-    pluck (propertyName : string) : UnderscoreWrappedObject;
+    pluck(propertyName: string): UnderscoreWrappedObject;
 
-    max (iterator? : UnderscoreIterator, context? : any) : UnderscoreWrappedObject;
+    max(iterator?: UnderscoreIterator, context?: any): UnderscoreWrappedObject;
 
-    min (iterator? : UnderscoreIterator, context? : any) : UnderscoreWrappedObject;
+    min(iterator?: UnderscoreIterator, context?: any): UnderscoreWrappedObject;
 
-    sortBy (property? : string, context? : any) : UnderscoreWrappedObject;
-    sortBy (iterator? : UnderscoreIterator, context? : any) : UnderscoreWrappedObject;
+    sortBy(property?: string, context?: any): UnderscoreWrappedObject;
+    sortBy(iterator?: UnderscoreIterator, context?: any): UnderscoreWrappedObject;
 
-    groupBy (property : string) : UnderscoreWrappedObject;
-    groupBy (iterator : UnderscoreIterator) : UnderscoreWrappedObject;
+    groupBy(property: string): UnderscoreWrappedObject;
+    groupBy(iterator: UnderscoreIterator): UnderscoreWrappedObject;
 
-    countBy (property : string) : UnderscoreWrappedObject;
-    countBy (iterator : UnderscoreIterator) : UnderscoreWrappedObject;
+    countBy(property: string): UnderscoreWrappedObject;
+    countBy(iterator: UnderscoreIterator): UnderscoreWrappedObject;
 
-    shuffle () : UnderscoreWrappedObject;
+    shuffle(): UnderscoreWrappedObject;
 
-    toArray () : UnderscoreWrappedObject;
+    toArray(): UnderscoreWrappedObject;
 
-    size () : UnderscoreWrappedObject;
+    size(): UnderscoreWrappedObject;
 
 
     // Array Functions
-    first (n? : number) : UnderscoreWrappedObject;
-    head (n? : number) : UnderscoreWrappedObject;
-    take (n? : number) : UnderscoreWrappedObject;
+    first(n?: number): UnderscoreWrappedObject;
+    head(n?: number): UnderscoreWrappedObject;
+    take(n?: number): UnderscoreWrappedObject;
 
-    initial (n? : number) : UnderscoreWrappedObject;
+    initial(n?: number): UnderscoreWrappedObject;
 
-    last (n? : number) : UnderscoreWrappedObject;
+    last(n?: number): UnderscoreWrappedObject;
 
-    rest (index? : number) : UnderscoreWrappedObject;
-    tail (index? : number) : UnderscoreWrappedObject;
-    drop (index? : number) : UnderscoreWrappedObject;
+    rest(index?: number): UnderscoreWrappedObject;
+    tail(index?: number): UnderscoreWrappedObject;
+    drop(index?: number): UnderscoreWrappedObject;
 
-    compact () : UnderscoreWrappedObject;
+    compact(): UnderscoreWrappedObject;
 
-    flatten (shallow? : bool) : UnderscoreWrappedObject;
+    flatten(shallow?: boolean): UnderscoreWrappedObject;
 
-    without (...values : any[]) : UnderscoreWrappedObject;
+    without(...values: any[]): UnderscoreWrappedObject;
 
-    union (...arrays : any[][]) : UnderscoreWrappedObject;
+    union(...arrays: any[][]): UnderscoreWrappedObject;
 
-    intersection (...arrays : any[][]) : UnderscoreWrappedObject;
+    intersection(...arrays: any[][]): UnderscoreWrappedObject;
 
-    difference (...arrays : any[][]) : UnderscoreWrappedObject;
+    difference(...arrays: any[][]): UnderscoreWrappedObject;
 
-    uniq (isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : UnderscoreWrappedObject;
-    unique (isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : UnderscoreWrappedObject;
+    uniq(isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): UnderscoreWrappedObject;
+    unique(isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): UnderscoreWrappedObject;
 
-    zip (...arrays : any[][]) : UnderscoreWrappedObject;
+    zip(...arrays: any[][]): UnderscoreWrappedObject;
 
-    object (value? : any) : UnderscoreWrappedObject;
+    object(value?: any): UnderscoreWrappedObject;
 
-    indexOf (value : any, isSorted? : bool) : UnderscoreWrappedObject;
+    indexOf(value: any, isSorted?: boolean): UnderscoreWrappedObject;
 
-    lastIndexOf (value : any, fromIndex? : number) : UnderscoreWrappedObject;
+    lastIndexOf(value: any, fromIndex?: number): UnderscoreWrappedObject;
 
-    sortedIndex (value : any, UnderscoreIterator? : UnderscoreIterator) : UnderscoreWrappedObject;
+    sortedIndex(value: any, UnderscoreIterator?: UnderscoreIterator): UnderscoreWrappedObject;
 
 
     // Function (uh, ahem) Functions
-    bind (object : any, ...arguments : any[]) : UnderscoreWrappedObject;
+    bind(object: any, ...arguments: any[]): UnderscoreWrappedObject;
 
-    memoize (hashFunction? : (value : any) => any) : UnderscoreWrappedObject;
+    memoize(hashFunction?: (value: any) => any): UnderscoreWrappedObject;
 
-    delay ( wait : number, ...arguments : any[]) : UnderscoreWrappedObject;
+    delay(wait: number, ...arguments: any[]): UnderscoreWrappedObject;
 
-    defer (...arguments : any[]) : UnderscoreWrappedObject;
+    defer(...arguments: any[]): UnderscoreWrappedObject;
 
-    throttle (wait : number) : UnderscoreWrappedObject;
+    throttle(wait: number): UnderscoreWrappedObject;
 
-    debounce (wait : number, immediate? : bool) : UnderscoreWrappedObject;
+    debounce(wait: number, immediate?: boolean): UnderscoreWrappedObject;
 
-    once () : UnderscoreWrappedObject;
+    once(): UnderscoreWrappedObject;
 
-    after (fn : (...args : any[]) => any) : UnderscoreWrappedObject;
+    after(fn: (...args: any[]) => any): UnderscoreWrappedObject;
 
-    wrap (wrapper : (...args : any[]) => any) : UnderscoreWrappedObject;
+    wrap(wrapper: (...args: any[]) => any): UnderscoreWrappedObject;
 
-    compose (...fns : Function[]) : UnderscoreWrappedObject;
+    compose(...fns: Function[]): UnderscoreWrappedObject;
 
 
     // Object Functions
-    keys () : UnderscoreWrappedObject;
+    keys(): UnderscoreWrappedObject;
 
-    values () : UnderscoreWrappedObject;
+    values(): UnderscoreWrappedObject;
 
-    pairs () : UnderscoreWrappedObject;
+    pairs(): UnderscoreWrappedObject;
 
-    invert () : UnderscoreWrappedObject;
+    invert(): UnderscoreWrappedObject;
 
-    functions () : UnderscoreWrappedObject;
-    methods () : UnderscoreWrappedObject;
+    functions(): UnderscoreWrappedObject;
+    methods(): UnderscoreWrappedObject;
 
-    extend (...sources : any[]) : UnderscoreWrappedObject;
+    extend(...sources: any[]): UnderscoreWrappedObject;
 
-    pick (...keys : string[]) : UnderscoreWrappedObject;
+    pick(...keys: string[]): UnderscoreWrappedObject;
 
-    omit (...keys : string[]) : UnderscoreWrappedObject;
+    omit(...keys: string[]): UnderscoreWrappedObject;
 
-    defaults (...defaults : any[]) : UnderscoreWrappedObject;
+    defaults(...defaults: any[]): UnderscoreWrappedObject;
 
-    clone () : UnderscoreWrappedObject;
+    clone(): UnderscoreWrappedObject;
 
-    tap (interceptor : (...as : any[]) => any) : UnderscoreWrappedObject;
+    tap(interceptor: (...as: any[]) => any): UnderscoreWrappedObject;
 
-    has (key : any) : UnderscoreWrappedObject;
+    has(key: any): UnderscoreWrappedObject;
 
-    isEqual (other : any) : UnderscoreWrappedObject;
+    isEqual(other: any): UnderscoreWrappedObject;
 
-    isEmpty () : UnderscoreWrappedObject;
+    isEmpty(): UnderscoreWrappedObject;
 
-    isElement () : UnderscoreWrappedObject;
+    isElement(): UnderscoreWrappedObject;
 
-    isArray () : UnderscoreWrappedObject;
+    isArray(): UnderscoreWrappedObject;
 
-    isObject () : UnderscoreWrappedObject;
+    isObject(): UnderscoreWrappedObject;
 
-    isArguments () : UnderscoreWrappedObject;
+    isArguments(): UnderscoreWrappedObject;
 
-    isFunction () : UnderscoreWrappedObject;
+    isFunction(): UnderscoreWrappedObject;
 
-    isString () : UnderscoreWrappedObject;
+    isString(): UnderscoreWrappedObject;
 
-    isNumber () : UnderscoreWrappedObject;
+    isNumber(): UnderscoreWrappedObject;
 
-    isFinite () : UnderscoreWrappedObject;
+    isFinite(): UnderscoreWrappedObject;
 
-    isBoolean () : UnderscoreWrappedObject;
+    isbooleanean(): UnderscoreWrappedObject;
 
-    isDate () : UnderscoreWrappedObject;
+    isDate(): UnderscoreWrappedObject;
 
-    isRegExp () : UnderscoreWrappedObject;
+    isRegExp(): UnderscoreWrappedObject;
 
-    isNaN () : UnderscoreWrappedObject;
+    isNaN(): UnderscoreWrappedObject;
 
-    isNull () : UnderscoreWrappedObject;
+    isNull(): UnderscoreWrappedObject;
 
-    isUndefined () : UnderscoreWrappedObject;
+    isUndefined(): UnderscoreWrappedObject;
 
 
     // Utility Functions
-    identity () : UnderscoreWrappedObject;
+    identity(): UnderscoreWrappedObject;
 
-    escape () : UnderscoreWrappedObject;
+    escape(): UnderscoreWrappedObject;
 
-    result (property : string) : UnderscoreWrappedObject;
+    result(property: string): UnderscoreWrappedObject;
 
-    template (data? : any, settings? : any) : (...as : any[]) => UnderscoreWrappedObject;
+    template(data?: any, settings?: any): (...as: any[]) => UnderscoreWrappedObject;
 
-    value () : any;
+    value(): any;
 }
 
 /* Interface that enables the use of underscore in a OO Style.
    range, bindAll, dealy, defer, after, noConflict, times, random, mixin and
    uniqueId have been removed because they are not very useful here.
  */
-declare interface UnderscoreOOStatic {
+interface UnderscoreOOStatic {
     // Collection Functions (Arrays or Objects)
-    each (iterator : UnderscoreVoidListIterator, context? : any) : void;
-    each (iterator : UnderscoreVoidObjectIterator, context? : any) : void;
-    forEach (iterator : UnderscoreVoidListIterator, context? : any) : void;
-    forEach (iterator : UnderscoreVoidObjectIterator, context? : any) : void;
+    each(iterator: UnderscoreVoidListIterator, context?: any): void;
+    each(iterator: UnderscoreVoidObjectIterator, context?: any): void;
+    forEach(iterator: UnderscoreVoidListIterator, context?: any): void;
+    forEach(iterator: UnderscoreVoidObjectIterator, context?: any): void;
 
-    map (iterator : UnderscoreListIterator, context? : any) : any[];
-    map (iterator : UnderscoreObjectIterator, context? : any) : any[];
-    collect (iterator : UnderscoreListIterator, context? : any) : any[];
-    collect (iterator : UnderscoreObjectIterator, context? : any) : any[];
+    map(iterator: UnderscoreListIterator, context?: any): any[];
+    map(iterator: UnderscoreObjectIterator, context?: any): any[];
+    collect(iterator: UnderscoreListIterator, context?: any): any[];
+    collect(iterator: UnderscoreObjectIterator, context?: any): any[];
 
-    reduce (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    reduce (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    inject (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    inject (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    foldl (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    foldl (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
+    reduce(iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    reduce(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    inject(iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    inject(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    foldl(iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    foldl(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
 
-    reduceRight (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    reduceRight (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    foldr (iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    foldr (iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
+    reduceRight(iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    reduceRight(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    foldr(iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    foldr(iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
 
-    find (predicate : UnderscorePredicate, context? : any) : any;
-    detect (predicate : UnderscorePredicate, context? : any) : any;
+    find(predicate: UnderscorePredicate, context?: any): any;
+    detect(predicate: UnderscorePredicate, context?: any): any;
 
-    filter (predicate : UnderscorePredicate, context? : any) : any;
-    select (predicate : UnderscorePredicate, context? : any) : any;
+    filter(predicate: UnderscorePredicate, context?: any): any;
+    select(predicate: UnderscorePredicate, context?: any): any;
 
-    where (properties : any) : any;
+    where(properties: any): any;
 
-    reject (predicate : UnderscorePredicate, context? : any) : any;
+    reject(predicate: UnderscorePredicate, context?: any): any;
 
-    all (predicate : UnderscorePredicate, context? : any) : any;
-    every (predicate : UnderscorePredicate, context? : any) : any;
+    all(predicate: UnderscorePredicate, context?: any): any;
+    every(predicate: UnderscorePredicate, context?: any): any;
 
-    any (predicate? : UnderscorePredicate, context? : any) : any;
-    some (predicate? : UnderscorePredicate, context? : any) : any;
+    any(predicate?: UnderscorePredicate, context?: any): any;
+    some(predicate?: UnderscorePredicate, context?: any): any;
 
-    contains (value : any) : bool;
-    include (value : any) : bool;
+    contains(value: any): boolean;
+    include(value: any): boolean;
 
-    invoke (methodName : string, ...arguments: any[]) : any;
+    invoke(methodName: string, ...arguments: any[]): any;
 
-    pluck (propertyName : string) : any;
+    pluck(propertyName: string): any;
 
-    max (iterator? : UnderscoreIterator, context? : any) : any;
+    max(iterator?: UnderscoreIterator, context?: any): any;
 
-    min (iterator? : UnderscoreIterator, context? : any) : any;
+    min(iterator?: UnderscoreIterator, context?: any): any;
 
-    sortBy (property? : string, context? : any) : any;
-    sortBy (iterator? : UnderscoreIterator, context? : any) : any;
+    sortBy(property?: string, context?: any): any;
+    sortBy(iterator?: UnderscoreIterator, context?: any): any;
 
-    groupBy (property : string) : any;
-    groupBy (iterator : UnderscoreIterator) : any;
+    groupBy(property: string): any;
+    groupBy(iterator: UnderscoreIterator): any;
 
-    countBy (property : string) : any;
-    countBy (iterator : UnderscoreIterator) : any;
+    countBy(property: string): any;
+    countBy(iterator: UnderscoreIterator): any;
 
-    shuffle () : any;
+    shuffle(): any;
 
-    toArray () : any[];
+    toArray(): any[];
 
-    size () : number;
+    size(): number;
 
 
     // Array Functions
-    first (n? : number) : any;
-    head (n? : number) : any;
-    take (n? : number) : any;
+    first(n?: number): any;
+    head(n?: number): any;
+    take(n?: number): any;
 
-    initial (n? : number) : any[];
+    initial(n?: number): any[];
 
-    last (n? : number) : any;
+    last(n?: number): any;
 
-    rest (index? : number) : any[];
-    tail (index? : number) : any[];
-    drop (index? : number) : any[];
+    rest(index?: number): any[];
+    tail(index?: number): any[];
+    drop(index?: number): any[];
 
-    compact () : any[];
+    compact(): any[];
 
-    flatten (shallow? : bool) : any[];
+    flatten(shallow?: boolean): any[];
 
-    without (...values : any[]) : any[];
+    without(...values: any[]): any[];
 
-    union (...arrays : any[][]) : any[];
+    union(...arrays: any[][]): any[];
 
-    intersection (...arrays : any[][]) : any[];
+    intersection(...arrays: any[][]): any[];
 
-    difference (...arrays : any[][]) : any[];
+    difference(...arrays: any[][]): any[];
 
-    uniq (isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : any[];
-    unique (isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : any[];
+    uniq(isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): any[];
+    unique(isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): any[];
 
-    zip (...arrays : any[][]) : any[];
+    zip(...arrays: any[][]): any[];
 
-    object (value? : any) : any;
+    object(value?: any): any;
 
-    indexOf (value : any, isSorted? : bool) : number;
+    indexOf(value: any, isSorted?: boolean): number;
 
-    lastIndexOf (value : any, fromIndex? : number) : number;
+    lastIndexOf(value: any, fromIndex?: number): number;
 
-    sortedIndex (value : any, UnderscoreIterator? : UnderscoreIterator) : any;
+    sortedIndex(value: any, UnderscoreIterator?: UnderscoreIterator): any;
 
 
     // Function (uh, ahem) Functions
-    bind (object : any, ...arguments : any[]) : (...args : any[]) => any;
+    bind(object: any, ...arguments: any[]): (...args: any[]) => any;
 
-    memoize (hashFunction? : (value : any) => any) : (...args : any[]) => any;
+    memoize(hashFunction?: (value: any) => any): (...args: any[]) => any;
 
-    delay ( wait : number, ...arguments : any[]) : void;
+    delay(wait: number, ...arguments: any[]): void;
 
-    defer (...arguments : any[]) : void;
+    defer(...arguments: any[]): void;
 
-    throttle (wait : number) : (...args : any[]) => any;
+    throttle(wait: number): (...args: any[]) => any;
 
-    debounce (wait : number, immediate? : bool) : (...args : any[]) => any;
+    debounce(wait: number, immediate?: boolean): (...args: any[]) => any;
 
-    once () : (...args : any[]) => any;
+    once(): (...args: any[]) => any;
 
-    after (fn : (...args : any[]) => any) : (...args : any[]) => any;
+    after(fn: (...args: any[]) => any): (...args: any[]) => any;
 
-    wrap (wrapper : (...args : any[]) => any) : (...args : any[]) => any;
+    wrap(wrapper: (...args: any[]) => any): (...args: any[]) => any;
 
-    compose (...fns : Function[]) : (...args : any[]) => any;
+    compose(...fns: Function[]): (...args: any[]) => any;
 
 
     // Object Functions
-    keys () : string[];
+    keys(): string[];
 
-    values () : any[];
+    values(): any[];
 
-    pairs () : any[];
+    pairs(): any[];
 
-    invert () : any;
+    invert(): any;
 
-    functions () : string[];
-    methods () : string[];
+    functions(): string[];
+    methods(): string[];
 
-    extend (...sources : any[]) : any;
+    extend(...sources: any[]): any;
 
-    pick (...keys : string[]) : any;
+    pick(...keys: string[]): any;
 
-    omit (...keys : string[]) : any;
+    omit(...keys: string[]): any;
 
-    defaults (...defaults : any[]) : any;
+    defaults(...defaults: any[]): any;
 
-    clone () : any;
+    clone(): any;
 
-    tap (interceptor : (...as : any[]) => any) : any;
+    tap(interceptor: (...as: any[]) => any): any;
 
-    has (key : any) : bool;
+    has(key: any): boolean;
 
-    isEqual (other : any) : bool;
+    isEqual(other: any): boolean;
 
-    isEmpty () : bool;
+    isEmpty(): boolean;
 
-    isElement () : bool;
+    isElement(): boolean;
 
-    isArray () : bool;
+    isArray(): boolean;
 
-    isObject () : bool;
+    isObject(): boolean;
 
-    isArguments () : bool;
+    isArguments(): boolean;
 
-    isFunction () : bool;
+    isFunction(): boolean;
 
-    isString () : bool;
+    isString(): boolean;
 
-    isNumber () : bool;
+    isNumber(): boolean;
 
-    isFinite () : bool;
+    isFinite(): boolean;
 
-    isBoolean () : bool;
+    isbooleanean(): boolean;
 
-    isDate () : bool;
+    isDate(): boolean;
 
-    isRegExp () : bool;
+    isRegExp(): boolean;
 
-    isNaN () : bool;
+    isNaN(): boolean;
 
-    isNull () : bool;
+    isNull(): boolean;
 
-    isUndefined () : bool;
+    isUndefined(): boolean;
 
 
     // Utility Functions
-    identity () : any;
+    identity(): any;
 
-    escape () : string;
+    escape(): string;
 
-    result (property : string) : any;
+    result(property: string): any;
 
-    template (data? : any, settings? : UnderscoreTemplateSettings) : (...as : any[]) => string;
+    template(data?: any, settings?: UnderscoreTemplateSettings): (...as: any[]) => string;
 
-    chain () : UnderscoreWrappedObject;
+    chain(): UnderscoreWrappedObject;
 }
 
-declare interface UnderscoreStatic {
+interface UnderscoreStatic {
     // OO-style
-    (arg : any) : UnderscoreOOStatic;
+    (arg: any): UnderscoreOOStatic;
 
     // Collection Functions (Arrays or Objects)
-    each (list : any[], iterator : UnderscoreVoidListIterator, context? : any) : void;
-    each (object : any, iterator : UnderscoreVoidObjectIterator, context? : any) : void;
-    forEach (list : any[], iterator : UnderscoreVoidListIterator, context? : any) : void;
-    forEach (object : any, iterator : UnderscoreVoidObjectIterator, context? : any) : void;
+    each(list: any[], iterator: UnderscoreVoidListIterator, context?: any): void;
+    each(object: any, iterator: UnderscoreVoidObjectIterator, context?: any): void;
+    forEach(list: any[], iterator: UnderscoreVoidListIterator, context?: any): void;
+    forEach(object: any, iterator: UnderscoreVoidObjectIterator, context?: any): void;
 
-    map (list : any[], iterator : UnderscoreListIterator, context? : any) : any[];
-    map (object : any, iterator : UnderscoreObjectIterator, context? : any) : any[];
-    collect (list : any[], iterator : UnderscoreListIterator, context? : any) : any[];
-    collect (object : any, iterator : UnderscoreObjectIterator, context? : any) : any[];
-
-
-    reduce (list : any[], iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    reduce (list : any, iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    inject (list : any[], iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    inject (list : any, iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    foldl (list : any[], iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    foldl (list : any, iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
+    map(list: any[], iterator: UnderscoreListIterator, context?: any): any[];
+    map(object: any, iterator: UnderscoreObjectIterator, context?: any): any[];
+    collect(list: any[], iterator: UnderscoreListIterator, context?: any): any[];
+    collect(object: any, iterator: UnderscoreObjectIterator, context?: any): any[];
 
 
-    reduceRight (list : any[], iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    reduceRight (list : any, iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
-    foldr (list : any[], iterator : UnderscoreMemoListIterator, memo : any, context? : any) : any;
-    foldr (list : any, iterator : UnderscoreMemoObjectIterator, memo : any, context? : any) : any;
+    reduce(list: any[], iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    reduce(list: any, iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    inject(list: any[], iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    inject(list: any, iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    foldl(list: any[], iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    foldl(list: any, iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
 
-    find (list : any, predicate : UnderscorePredicate, context? : any) : any;
-    detect (list : any, predicate : UnderscorePredicate, context? : any) : any;
 
-    filter (list : any, predicate : UnderscorePredicate, context? : any) : any;
-    select (list : any, predicate : UnderscorePredicate, context? : any) : any;
+    reduceRight(list: any[], iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    reduceRight(list: any, iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
+    foldr(list: any[], iterator: UnderscoreMemoListIterator, memo: any, context?: any): any;
+    foldr(list: any, iterator: UnderscoreMemoObjectIterator, memo: any, context?: any): any;
 
-    where (list : any, properties : any) : any;
+    find(list: any, predicate: UnderscorePredicate, context?: any): any;
+    detect(list: any, predicate: UnderscorePredicate, context?: any): any;
 
-    reject (list : any, predicate : UnderscorePredicate, context? : any) : any;
+    filter(list: any, predicate: UnderscorePredicate, context?: any): any;
+    select(list: any, predicate: UnderscorePredicate, context?: any): any;
 
-    all (list : any, predicate : UnderscorePredicate, context? : any) : any;
-    every (list : any, predicate : UnderscorePredicate, context? : any) : any;
+    where(list: any, properties: any): any;
 
-    any (list : any, predicate? : UnderscorePredicate, context? : any) : any;
-    some (list : any, predicate? : UnderscorePredicate, context? : any) : any;
+    reject(list: any, predicate: UnderscorePredicate, context?: any): any;
 
-    contains (list : any, value : any) : bool;
-    include (list : any, value : any) : bool;
+    all(list: any, predicate: UnderscorePredicate, context?: any): any;
+    every(list: any, predicate: UnderscorePredicate, context?: any): any;
 
-    invoke (list : any, methodName : string, ...arguments: any[]) : any;
+    any(list: any, predicate?: UnderscorePredicate, context?: any): any;
+    some(list: any, predicate?: UnderscorePredicate, context?: any): any;
 
-    pluck (list : any, propertyName : string) : any;
+    contains(list: any, value: any): boolean;
+    include(list: any, value: any): boolean;
 
-    max (list : any, UnderscoreIterator? : UnderscoreIterator, context? : any) : any;
+    invoke(list: any, methodName: string, ...arguments: any[]): any;
 
-    min (list : any, UnderscoreIterator? : UnderscoreIterator, context? : any) : any;
+    pluck(list: any, propertyName: string): any;
 
-    sortBy (list : any, property? : string, context? : any) : any;
-    sortBy (list : any, UnderscoreIterator? : UnderscoreIterator, context? : any) : any;
+    max(list: any, UnderscoreIterator?: UnderscoreIterator, context?: any): any;
 
-    groupBy (list : any, property : string) : any;
-    groupBy (list : any, iterator : UnderscoreIterator) : any;
+    min(list: any, UnderscoreIterator?: UnderscoreIterator, context?: any): any;
 
-    countBy (list : any, iterator : UnderscoreIterator) : any;
+    sortBy(list: any, property?: string, context?: any): any;
+    sortBy(list: any, UnderscoreIterator?: UnderscoreIterator, context?: any): any;
 
-    shuffle (list : any) : any;
+    groupBy(list: any, property: string): any;
+    groupBy(list: any, iterator: UnderscoreIterator): any;
 
-    toArray (list : any) : any[];
+    countBy(list: any, iterator: UnderscoreIterator): any;
 
-    size (list : any) : number;
+    shuffle(list: any): any;
+
+    toArray(list: any): any[];
+
+    size(list: any): number;
 
 
     // Array Functions
 
-    first (array : any[], n? : number) : any;
-    head (array : any[], n? : number) : any;
-    take (array : any[], n? : number) : any;
+    first(array: any[], n?: number): any;
+    head(array: any[], n?: number): any;
+    take(array: any[], n?: number): any;
 
-    initial (array : any[], n? : number) : any[];
+    initial(array: any[], n?: number): any[];
 
-    last (array : any[], n? : number) : any;
+    last(array: any[], n?: number): any;
 
-    rest (array : any[], index? : number) : any[];
-    tail (array : any[], index? : number) : any[];
-    drop (array : any[], index? : number) : any[];
+    rest(array: any[], index?: number): any[];
+    tail(array: any[], index?: number): any[];
+    drop(array: any[], index?: number): any[];
 
-    compact (array : any[]) : any[];
+    compact(array: any[]): any[];
 
-    flatten (array : any[], shallow? : bool) : any[];
+    flatten(array: any[], shallow?: boolean): any[];
 
-    without (array : any[], ...values : any[]) : any[];
+    without(array: any[], ...values: any[]): any[];
 
-    union (...arrays : any[][]) : any[];
+    union(...arrays: any[][]): any[];
 
-    intersection (...arrays : any[][]) : any[];
+    intersection(...arrays: any[][]): any[];
 
-    difference (...arrays : any[][]) : any[];
+    difference(...arrays: any[][]): any[];
 
-    uniq (array : any[], isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : any[];
-    unique (array : any[], isSorted? : bool, UnderscoreIterator? : UnderscoreIterator) : any[];
+    uniq(array: any[], isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): any[];
+    unique(array: any[], isSorted?: boolean, UnderscoreIterator?: UnderscoreIterator): any[];
 
-    zip (...arrays : any[][]) : any[];
+    zip(...arrays: any[][]): any[];
 
-    object (list : any, value? : any) : any;
+    object(list: any, value?: any): any;
 
-    indexOf (array : any[], value : any, isSorted? : bool) : number;
+    indexOf(array: any[], value: any, isSorted?: boolean): number;
 
-    lastIndexOf (array : any[], value : any, fromIndex? : number) : number;
+    lastIndexOf(array: any[], value: any, fromIndex?: number): number;
 
-    sortedIndex (list : any, value : any, UnderscoreIterator? : UnderscoreIterator) : any;
+    sortedIndex(list: any, value: any, UnderscoreIterator?: UnderscoreIterator): any;
 
-    range (stop : number) : number[];
-    range (start: number, stop : number, step? : number) : number[];
+    range(stop: number): number[];
+    range(start: number, stop: number, step?: number): number[];
 
 
     // Function (uh, ahem) Functions
 
-    bind (fn : (...args : any[]) => any, object : any, ...arguments : any[]) : (...args : any[]) => any;
+    bind(fn: (...args: any[]) => any, object: any, ...arguments: any[]): (...args: any[]) => any;
 
-    bindAll (object : any, ...methodNames : string[]) : void;
+    bindAll(object: any, ...methodNames: string[]): void;
 
-    memoize (fn : (...args : any[]) => any, hashFunction? : (value : any) => any) : (...args : any[]) => any;
+    memoize(fn: (...args: any[]) => any, hashFunction?: (value: any) => any): (...args: any[]) => any;
 
-    delay (fn : (...args : any[]) => any, wait : number, ...arguments : any[]) : void;
+    delay(fn: (...args: any[]) => any, wait: number, ...arguments: any[]): void;
 
-    defer (fn : (...args : any[]) => any, ...arguments : any[]) : void;
+    defer(fn: (...args: any[]) => any, ...arguments: any[]): void;
 
-    throttle (fn : (...args : any[]) => any, wait : number) : (...args : any[]) => any;
+    throttle(fn: (...args: any[]) => any, wait: number): (...args: any[]) => any;
 
-    debounce (fn : (...args : any[]) => any, wait : number, immediate? : bool) : (...args : any[]) => any;
+    debounce(fn: (...args: any[]) => any, wait: number, immediate?: boolean): (...args: any[]) => any;
 
-    once (fn : (...args : any[]) => any) : (...args : any[]) => any;
+    once(fn: (...args: any[]) => any): (...args: any[]) => any;
 
-    after (count : number, fn : (...args : any[]) => any) : (...args : any[]) => any;
+    after(count: number, fn: (...args: any[]) => any): (...args: any[]) => any;
 
-    wrap (fn : (...args : any[]) => any, wrapper : (...args : any[]) => any) : (...args : any[]) => any;
+    wrap(fn: (...args: any[]) => any, wrapper: (...args: any[]) => any): (...args: any[]) => any;
 
-    compose (...fns : Function[]) : (...args : any[]) => any;
+    compose(...fns: Function[]): (...args: any[]) => any;
 
 
     // Object Functions
 
-    keys (object : any) : string[];
+    keys(object: any): string[];
 
-    values (object : any) : any[];
+    values(object: any): any[];
 
-    pairs (object : any) : any[];
+    pairs(object: any): any[];
 
-    invert (object : any) : any;
+    invert(object: any): any;
 
-    functions (object : any) : string[];
-    methods (object : any) : string[];
+    functions(object: any): string[];
+    methods(object: any): string[];
 
-    extend (destination : any, ...sources : any[]) : any;
+    extend(destination: any, ...sources: any[]): any;
 
-    pick (object : any, ...keys : string[]) : any;
+    pick(object: any, ...keys: string[]): any;
 
-    omit (object : any, ...keys : string[]) : any;
+    omit(object: any, ...keys: string[]): any;
 
-    defaults (object : any, ...defaults : any[]) : any;
+    defaults(object: any, ...defaults: any[]): any;
 
-    clone (object : any) : any;
+    clone(object: any): any;
 
-    tap (object : any, interceptor : (...as : any[]) => any) : any;
+    tap(object: any, interceptor: (...as: any[]) => any): any;
 
-    has (object : any, key : any) : bool;
+    has(object: any, key: any): boolean;
 
-    isEqual (object : any, other : any) : bool;
+    isEqual(object: any, other: any): boolean;
 
-    isEmpty (object : any) : bool;
+    isEmpty(object: any): boolean;
 
-    isElement (object : any) : bool;
+    isElement(object: any): boolean;
 
-    isArray (object : any) : bool;
+    isArray(object: any): boolean;
 
-    isObject (value : any) : bool;
+    isObject(value: any): boolean;
 
-    isArguments (object : any) : bool;
+    isArguments(object: any): boolean;
 
-    isFunction (object : any) : bool;
+    isFunction(object: any): boolean;
 
-    isString (object : any) : bool;
+    isString(object: any): boolean;
 
-    isNumber (object : any) : bool;
+    isNumber(object: any): boolean;
 
-    isFinite (object : any) : bool;
+    isFinite(object: any): boolean;
 
-    isBoolean (object : any) : bool;
+    isbooleanean(object: any): boolean;
 
-    isDate (object : any) : bool;
+    isDate(object: any): boolean;
 
-    isRegExp (object : any) : bool;
+    isRegExp(object: any): boolean;
 
-    isNaN (object : any) : bool;
+    isNaN(object: any): boolean;
 
-    isNull (object : any) : bool;
+    isNull(object: any): boolean;
 
-    isUndefined (object : any) : bool;
+    isUndefined(object: any): boolean;
 
 
     // Utility Functions
 
-    noConflict () : any;
+    noConflict(): any;
 
-    identity (value : any) : any;
+    identity(value: any): any;
 
-    times (n : number, iterator : (index : number) => void, context? : any) : void;
+    times(n: number, iterator: (index: number) => void, context?: any): void;
 
-    random (min : number, max : number) : number;
+    random(min: number, max: number): number;
 
-    mixin (object : any) : void;
+    mixin(object: any): void;
 
-    uniqueId (prefix? : string) : any;
+    uniqueId(prefix?: string): any;
 
-    escape (str : string) : string;
+    escape(str: string): string;
 
-    result (object : any, property : string) : any;
+    result(object: any, property: string): any;
 
-    template (templateString : string, data? : any, settings? : UnderscoreTemplateSettings) : (...as : any[]) => string;
-    templateSettings : UnderscoreTemplateSettings;
+    template(templateString: string, data?: any, settings?: UnderscoreTemplateSettings): (...as: any[]) => string;
+    templateSettings: UnderscoreTemplateSettings;
 
-    chain (object : any) : UnderscoreWrappedObject;
+    chain(object: any): UnderscoreWrappedObject;
 }
 
-declare var _ : UnderscoreStatic;
+declare var _: UnderscoreStatic;
